@@ -31,7 +31,7 @@ SET(PROJECT_URL "https://github.com/humanoid-path-planner/hpp-gepetto-viewer")
 # Tells pkg-config to read cmake_plugin from pkg config file.
 LIST(APPEND PKG_CONFIG_ADDITIONAL_VARIABLES cmake_plugin)
 
-findpython(2.7 EXACT)
+findpython()
 SETUP_HPP_PROJECT()
 
 add_required_dependency("hpp-corbaserver >= 4")
