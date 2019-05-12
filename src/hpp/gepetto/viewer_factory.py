@@ -53,6 +53,14 @@ class ViewerFactory (object):
         l ['guiOnly'] = True
         self.guiRequest.append ((Viewer.loadObstacleModel, l));
 
+    def loadBox(self, boxName, sizeX, sizeY, sizeZ, color):
+        l = locals()
+        self.guiRequest.append((Viewer.loadBox, l))
+
+    def loadCylinder(self, cylinderName, radius, height, color):
+        l = locals()
+        self.guiRequest.append((Viewer.loadCylinder, l))
+
     ## Move Obstacle
     #
     #  \param name Name of the object

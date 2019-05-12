@@ -286,8 +286,6 @@ class Viewer (object):
       tStop = time.time()
       return tStop-tStart
 
-
-
     ## Load obstacles from a urdf file
     #
     #  \param package ros package containing the urdf file,
@@ -307,6 +305,16 @@ class Viewer (object):
                                         not self.collisionURDF)
         self.client.gui.addToGroup (prefix, self.sceneName)
         self.computeObjectPosition ()
+
+    def loadBox(self, boxName, sizeX, sizeY, sizeZ, color):
+        self.client.gui.addBox(boxName, sizeX, sizeY, sizeZ, color)
+        self.client.gui.addToGroup(boxName, self.sceneName)
+        self.computeObjectPosition()
+
+    def loadCylinder(self, cylinderName, radius, height, color):
+        self.client.gui.addCylinder(cylinderName, radius, height, color)
+        self.client.gui.addToGroup(cylinderName, self.sceneName)
+        self.computeObjectPosition()
 
     ## Move Obstacle
     #
